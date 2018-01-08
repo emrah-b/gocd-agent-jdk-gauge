@@ -7,6 +7,8 @@ RUN curl `curl -s https://api.github.com/repos/getgauge/gauge/releases | grep br
     cp /tmp/gauge/gauge /usr/local/bin/ && \
     rm -rf gauge gauge.zip ~/.gauge/config ~/.gauge/logs 
 
-RUN gauge install java
+RUN gauge install java && gauge install html-report
+
+USER go
 
 
